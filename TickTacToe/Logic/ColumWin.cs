@@ -2,7 +2,7 @@ namespace TickTacToe.Logic;
 
 public class ColumWin
 {
-    public Cell ColumWinner(Cell[,] board)
+    public static Cell ColumWinner(Cell[,] board)
     {
         for (int col = 0; col < 3; col++)
         {
