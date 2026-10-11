@@ -1,0 +1,15 @@
+/Users/alex/Desktop/TickTacToe/TickTacToe/bin/Debug/net10.0/TickTacToe
+/Users/alex/Desktop/TickTacToe/TickTacToe/bin/Debug/net10.0/TickTacToe.deps.json
+/Users/alex/Desktop/TickTacToe/TickTacToe/bin/Debug/net10.0/TickTacToe.runtimeconfig.json
+/Users/alex/Desktop/TickTacToe/TickTacToe/bin/Debug/net10.0/TickTacToe.dll
+/Users/alex/Desktop/TickTacToe/TickTacToe/bin/Debug/net10.0/TickTacToe.pdb
+/Users/alex/Desktop/TickTacToe/TickTacToe/obj/Debug/net10.0/TickTacToe.GeneratedMSBuildEditorConfig.editorconfig
+/Users/alex/Desktop/TickTacToe/TickTacToe/obj/Debug/net10.0/TickTacToe.AssemblyInfoInputs.cache
+/Users/alex/Desktop/TickTacToe/TickTacToe/obj/Debug/net10.0/TickTacToe.AssemblyInfo.cs
+/Users/alex/Desktop/TickTacToe/TickTacToe/obj/Debug/net10.0/TickTacToe.csproj.CoreCompileInputs.cache
+/Users/alex/Desktop/TickTacToe/TickTacToe/obj/Debug/net10.0/TickTacToe.sourcelink.json
+/Users/alex/Desktop/TickTacToe/TickTacToe/obj/Debug/net10.0/TickTacToe.dll
+/Users/alex/Desktop/TickTacToe/TickTacToe/obj/Debug/net10.0/refint/TickTacToe.dll
+/Users/alex/Desktop/TickTacToe/TickTacToe/obj/Debug/net10.0/TickTacToe.pdb
+/Users/alex/Desktop/TickTacToe/TickTacToe/obj/Debug/net10.0/TickTacToe.genruntimeconfig.cache
+/Users/alex/Desktop/TickTacToe/TickTacToe/obj/Debug/net10.0/ref/TickTacToe.dll
