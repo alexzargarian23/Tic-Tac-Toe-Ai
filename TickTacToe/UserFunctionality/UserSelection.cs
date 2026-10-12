@@ -17,6 +17,7 @@ public class UserSelection
                 Console.WriteLine("You selected Player X");
                 return Cell.X;
             }
+
             if (userInput == "o" || userInput == "2" || userInput == "y")
             {
                 Console.WriteLine("You selected Player O");

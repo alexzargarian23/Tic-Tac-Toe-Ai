@@ -1,28 +1,28 @@
-﻿using TickTacToe.AI_Moves;
+﻿using TickTacToe.AiMoves;
 using TickTacToe.Logic;
 
 namespace TickTacToe;
 
-class Program
+internal class Program
 {
-    static void Main(string[] args)
+    private static void Main(string[] args)
     {
-        bord gameBoard = new bord();
+        var gameBoard = new Board();
 
         // 1. Let the user choose their symbol (X or O)
-        Cell userSymbol = UserSelection.PickUser();
-        
+        var userSymbol = UserSelection.PickUser();
+
         // 2. AI automatically gets the other symbol
-        Cell aiSymbol = (userSymbol == Cell.X) ? Cell.O : Cell.X;
+        var aiSymbol = userSymbol == Cell.X ? Cell.O : Cell.X;
 
         // X always goes first in Tic-Tac-Toe
-        Cell currentPlayer = Cell.X; 
-        bool gameOver = false;
+        var currentPlayer = Cell.X;
+        var gameOver = false;
 
         while (!gameOver)
         {
             Console.Clear();
-            gameBoard.printEmoptyBord();
+            gameBoard.PrintEmptyBoard();
 
             Console.WriteLine($"\nUser Symbol: {userSymbol} | AI Symbol: {aiSymbol}");
             Console.WriteLine($"Current Turn: {currentPlayer}");
@@ -36,65 +36,58 @@ class Program
             }
             else
             {
-                
-               
+                var aiMove = Priority.Moves(gameBoard.board, aiSymbol, userSymbol);
 
-                
-                int[] aiMove = Priority.moves(gameBoard.board, aiSymbol, userSymbol);
-                
                 // Apply AI move safely
-                if (aiMove != null && aiMove.Length == 2)
-                {
-                    gameBoard.board[aiMove[0], aiMove[1]] = aiSymbol;
-                }
+                if (aiMove != null && aiMove.Length == 2) gameBoard.board[aiMove[0], aiMove[1]] = aiSymbol;
 
-            
+
                 Console.Clear();
-                gameBoard.printEmoptyBord();
+                gameBoard.PrintEmptyBoard();
                 Console.WriteLine($"\nAI placed {aiSymbol} at Row {aiMove[0] + 1}, Column {aiMove[1] + 1}");
                 Console.WriteLine("Press any key to continue...");
                 Console.ReadKey();
             }
 
-            
-            Cell winner = CheckForWinner(gameBoard.board);
+
+            var winner = CheckForWinner(gameBoard.board);
             if (winner != Cell.Empty)
             {
                 Console.Clear();
-                gameBoard.printEmoptyBord();
+                gameBoard.PrintEmptyBoard();
                 Console.WriteLine($" Player {winner} Wins!");
                 gameOver = true;
                 break;
             }
 
-            if (Tie.isTie(gameBoard.board))
+            if (Tie.IsTie(gameBoard.board))
             {
                 Console.Clear();
-                gameBoard.printEmoptyBord();
+                gameBoard.PrintEmptyBoard();
                 Console.WriteLine("\nIt's a tie!");
                 gameOver = true;
                 break;
             }
 
-            currentPlayer = (currentPlayer == Cell.X) ? Cell.O : Cell.X;
+            currentPlayer = currentPlayer == Cell.X ? Cell.O : Cell.X;
         }
 
         Console.WriteLine("\nGame Over. Press any key to exit.");
         Console.ReadKey();
     }
 
-   
+
     private static Cell CheckForWinner(Cell[,] board)
     {
-        if (checkRows.checkRowWin(board) != Cell.Empty) 
-            return checkRows.checkRowWin(board);
-            
-        if (ColumWin.ColumWinner(board) != Cell.Empty) 
-            return ColumWin.ColumWinner(board);
-            
-        if (Diagonal.FirstDiagonalCell(board) != Cell.Empty) 
+        if (CheckRows.CheckRowWin(board) != Cell.Empty)
+            return CheckRows.CheckRowWin(board);
+
+        if (ColumnWin.ColumnWinner(board) != Cell.Empty)
+            return ColumnWin.ColumnWinner(board);
+
+        if (Diagonal.FirstDiagonalCell(board) != Cell.Empty)
             return Diagonal.FirstDiagonalCell(board);
-        
+
         return Cell.Empty;
     }
 }
